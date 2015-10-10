@@ -47,6 +47,10 @@ jhipster:
             timeToLiveInDays: 31
     datasource: # JHipster-specific configuration, in addition to the standard spring.datasource properties
         serverName: 
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
     cache: # Hibernate 2nd level cache, used by CacheConfiguration
         timeToLiveSeconds: 3600
         ehcache:

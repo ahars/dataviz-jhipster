@@ -1,0 +1,13 @@
+jhipster-dev-mysql:
+  container_name: dataviz-dev-mysql
+  image: mysql
+  # volumes:
+  # - ~/volumes/jhipster/dataviz/dev-mysql/:/var/lib/mysql/
+  environment:
+  - MYSQL_USER=root
+  - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+  - MYSQL_DATABASE=dataviz
+  ports:
+  - "3306:3306"
+  command: mysqld --lower_case_table_name=1
+

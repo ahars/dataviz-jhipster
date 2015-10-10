@@ -136,6 +136,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.jayway.awaitility</groupId>
@@ -545,12 +546,12 @@
                 <configuration>
                     <changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
                     <diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
-                    <driver></driver>
-                    <url></url>
-                    <defaultSchemaName></defaultSchemaName>
-                    <username></username>
+                    <driver>com.mysql.jdbc.Driver</driver>
+                    <url>jdbc:mysql://localhost:3306/dataviz</url>
+                    <defaultSchemaName>dataviz</defaultSchemaName>
+                    <username>root</username>
                     <password></password>
-                    <referenceUrl>hibernate:spring:com.ahars.domain?dialect=</referenceUrl>
+                    <referenceUrl>hibernate:spring:com.ahars.domain?dialect=org.hibernate.dialect.MySQLInnoDBDialect</referenceUrl>
                     <verbose>true</verbose>
                     <logging>debug</logging>
                 </configuration>
